@@ -7,7 +7,7 @@ export const moviesUpcomingUseCase = async ( fetcher: HttpAdapter ): Promise<Mov
 
 try {
  
- const upcoming = await fetcher.get<MovieDBMoviesResponse>('/coming');
+ const upcoming = await fetcher.get<MovieDBMoviesResponse>('/upcoming');
 
  return upcoming.results.map( result => MovieMapper.fromMovieDBResultToEntity(result) )
 
